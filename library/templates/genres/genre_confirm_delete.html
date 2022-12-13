@@ -1,0 +1,6 @@
+<h1>Genre Delete</h1>
+<form method="post">
+  {% csrf_token %} Are you sure you want to delete genre :
+  <b> {{object.title }}"</b> ?
+  <input type="submit" value="Submit" />
+</form>

@@ -1,0 +1,32 @@
+<h1>Libraries</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Zipcode</th>
+    <th>City</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for library in object_list %}
+    <tr>
+    <td>{{ library.id }}</td>
+    <td>{{ library.name }}</td>
+    <td>{{ library.address }}</td>
+    <td>{{ library.zipcode }}</td>
+    <td>{{ library.city }}</td>
+    <td><a href="{% url "library_view" library.id %}">view</a></td>
+    <td><a href="{% url "library_edit" library.id %}">edit</a></td>
+    <td><a href="{% url "library_delete" library.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "library_new" %}">New</a>

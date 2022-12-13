@@ -1,0 +1,28 @@
+<h1>Genres</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for genre in object_list %}
+    <tr>
+    <td>{{ genre.id }}</td>
+    <td>{{ genre.name }}</td>
+    <td>{{ genre.description }}</td>
+    <td><a href="{% url "genre_view" genre.id %}">view</a></td>
+    <td><a href="{% url "genre_edit" genre.id %}">edit</a></td>
+    <td><a href="{% url "genre_delete" genre.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "genre_new" %}">New</a>

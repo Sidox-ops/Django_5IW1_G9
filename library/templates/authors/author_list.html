@@ -1,0 +1,28 @@
+<h1>Authors</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for author in object_list %}
+    <tr>
+    <td>{{ author.id }}</td>
+    <td>{{ author.name }}</td>
+    <td>{{ author.surname }}</td>
+    <td><a href="{% url "author_view" author.id %}">view</a></td>
+    <td><a href="{% url "author_edit" author.id %}">edit</a></td>
+    <td><a href="{% url "author_delete" author.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "author_new" %}">New</a>
