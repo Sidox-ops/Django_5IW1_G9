@@ -1,0 +1,28 @@
+<h1>Collections</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for collection in object_list %}
+    <tr>
+    <td>{{ collection.id }}</td>
+    <td>{{ collection.name }}</td>
+    <td>{{ collection.description }}</td>
+    <td><a href="{% url "collection_view" collection.id %}">view</a></td>
+    <td><a href="{% url "collection_edit" collection.id %}">edit</a></td>
+    <td><a href="{% url "collection_delete" collection.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "collection_new" %}">New</a>

@@ -12,6 +12,7 @@ class Book(models.Model):
     author = models.ForeignKey('Author', on_delete=models.CASCADE)
 
 class Library(models.Model):
+    name = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
